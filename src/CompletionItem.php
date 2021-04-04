@@ -23,6 +23,13 @@ class CompletionItem
     public $kind;
 
     /**
+     * Tags for this completion item.
+     *
+     * @var int[]|null
+     */
+    public $tags;
+
+    /**
      * A human-readable string with additional information
      * about this item, like type or symbol information.
      *
@@ -108,6 +115,7 @@ class CompletionItem
     /**
      * @param string          $label
      * @param int|null        $kind
+     * @param int[]|null      $tags
      * @param string|null     $detail
      * @param string|null     $documentation
      * @param string|null     $sortText
@@ -122,6 +130,7 @@ class CompletionItem
     public function __construct(
         string $label = null,
         int $kind = null,
+        array $tags = null,
         string $detail = null,
         string $documentation = null,
         string $sortText = null,
@@ -135,6 +144,7 @@ class CompletionItem
     ) {
         $this->label = $label;
         $this->kind = $kind;
+        $this->tags = $tags;
         $this->detail = $detail;
         $this->documentation = $documentation;
         $this->sortText = $sortText;
